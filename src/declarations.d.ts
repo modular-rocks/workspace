@@ -41,6 +41,8 @@ interface CodebaseType {
   fromJson: Function;
   extractFiles: Function;
   save: Function;
+  addFile: Function;
+  makeDirectory: Function;
 }
 
 interface FileContainerType {

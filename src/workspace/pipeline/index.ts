@@ -1,5 +1,3 @@
-import FileContainer from '../file';
-
 function wait(func: Function, file: FileContainerType, state: State, opts: WorkspaceOpts, workspace: WorkspaceType) {
   return new Promise(async (resolve, reject) => {
     try {
