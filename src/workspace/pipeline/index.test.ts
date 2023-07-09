@@ -38,8 +38,18 @@ describe('Pipeline', () => {
       asyncFunction(6, 800, output),
     ];
 
-    const files = [1, 2, 3].map((x: number) => [`/path${x}`, '']);
-    const opts: Options = {
+    const files: [string, string][] = [1, 2, 3].map((x: number) => [`/path${x}`, '']);
+    const opts: WorkspaceOpts = {
+      pipeline,
+      files,
+      src: '/',
+      extensions: [],
+      ignoredFiles: [],
+      ignoredImports: [],
+      packageContents: {},
+    };
+
+    const codebaseOpts: CodebaseOpts = {
       pipeline,
       files,
       src: '/',
@@ -50,7 +60,7 @@ describe('Pipeline', () => {
     };
 
     const workspace = new Workspace(opts);
-    const codebase = new Codebase(opts);
+    const codebase = new Codebase(codebaseOpts);
     const filesContainer = Object.values(codebase.files);
 
     await runPipeline(filesContainer, pipeline, opts, workspace);

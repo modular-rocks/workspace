@@ -37,7 +37,7 @@ export default class FileContainer {
     this.hasParent = !['/', '.'].includes(parentPath);
   }
 
-  tooSimple() {
+  tooSimple(): Boolean {
     return false;
   }
 

@@ -1,6 +1,6 @@
 import FileContainer from '../file';
 
-function wait(func: Function, file: FileContainer, state: State, opts: Options, workspace: WorkspaceType) {
+function wait(func: Function, file: FileContainerType, state: State, opts: WorkspaceOpts, workspace: WorkspaceType) {
   return new Promise(async (resolve, reject) => {
     try {
       const result = await func(file, state, opts, workspace);
@@ -13,19 +13,19 @@ function wait(func: Function, file: FileContainer, state: State, opts: Options, 
 
 const invoke = async (
   func: Function,
-  files: FileContainer[],
+  files: FileContainerType[],
   state: State,
-  opts: Options,
+  opts: WorkspaceOpts,
   workspace: WorkspaceType
 ) => {
-  const promises = files.map((file: FileContainer) => wait(func, file, state, opts, workspace));
+  const promises = files.map((file: FileContainerType) => wait(func, file, state, opts, workspace));
   return Promise.all(promises);
 };
 
 const promise = async (
-  files: FileContainer[],
+  files: FileContainerType[],
   pipeline: Function[],
-  opts: Options,
+  opts: WorkspaceOpts,
   workspace: WorkspaceType,
   resolve: Function
 ) => {
@@ -41,9 +41,9 @@ const promise = async (
 };
 
 export default async (
-  files: FileContainer[],
+  files: FileContainerType[],
   pipeline: Function[] | undefined,
-  opts: Options,
+  opts: WorkspaceOpts,
   workspace: WorkspaceType
 ) => {
   if (!pipeline) return false;
