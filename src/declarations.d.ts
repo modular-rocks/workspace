@@ -78,12 +78,6 @@ interface FileStore {
   [property: string]: any;
 }
 
-declare module 'array-unique' {
-  function unique(array: any[]): any[];
-
-  export = unique;
-}
-
 // Can take any shape, generately has to be an Object like Node packages
 // Ports to any other languages can be formatted
 interface PackageContents {
