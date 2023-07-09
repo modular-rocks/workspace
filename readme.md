@@ -39,6 +39,10 @@ A FileContainer accepts 3 arguments: `pathname:string`, `code:string`, `codebase
 
 The pipeline is described in detail in the readme of the pipeline folder.
 
+## Framework specific versions
+
+- [workspace-node](https://github.com/modular-rocks/workspace-node)
+
 ## Examples
 
 Examples coming soon...

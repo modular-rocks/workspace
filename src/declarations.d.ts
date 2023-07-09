@@ -7,7 +7,8 @@ interface Options {
   src: string;
   extensions: string[];
   ignoredFiles: string[];
-  packageContents: RandomObject;
+  packageContents?: RandomObject;
+  packagePath?: string;
   ignoredImports: string[];
   custom?: Custom;
 }
@@ -38,6 +39,7 @@ interface CodebaseType {
   replaceRoot: Function;
   saveFile: Function;
   fromJson: Function;
+  extractFiles: Function;
 }
 
 interface FileContainerType {
