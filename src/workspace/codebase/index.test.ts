@@ -4,10 +4,10 @@ const str = JSON.stringify;
 
 describe('Codebase', () => {
   test('Everything works as expected', async () => {
-    const files = [1, 2, 3].map((x: number) => [`/home/projects/project/path${x}`, '']);
+    const files: [string, string][] = [1, 2, 3].map((x: number) => [`/home/projects/project/path${x}`, '']);
     const pipeline: Function[] = [];
 
-    const opts: Options = {
+    const opts: CodebaseOpts = {
       pipeline,
       files,
       src: '/home/projects/project/',

@@ -1,11 +1,10 @@
 declare module '@modular-rocks/workspace';
 interface RandomObject extends Record<string, any> {}
-interface FilesContainer extends Record<string, FileContainer> {}
+interface FilesContainer extends Record<string, FileContainerType> {}
 
 interface Options {
   pipeline?: Function[];
   src: string;
-  files: any[][];
   extensions: string[];
   ignoredFiles: string[];
   packageContents: RandomObject;
@@ -13,8 +12,16 @@ interface Options {
   custom?: Custom;
 }
 
+interface WorkspaceOpts extends Options {
+  files?: [string, string][];
+}
+
+interface CodebaseOpts extends Options {
+  files: [string, string][];
+}
+
 interface WorkspaceType {
-  opts: Options;
+  opts: WorkspaceOpts;
 }
 
 interface CodebaseType {
@@ -43,6 +50,15 @@ interface FileContainerType {
   codebase: CodebaseType;
   store: FileStore;
   ast?: any;
+  parse: Function;
+  updateCode: Function;
+  print: Function;
+  astToCode: Function;
+  codeToAST: Function;
+  spawn: Function;
+  tooSimple: Function;
+  addImport: Function;
+  save: Function;
 }
 
 interface Custom {
@@ -53,7 +69,7 @@ interface State {
   [property: string]: string;
 }
 
-type Extract = [NodePath, RandomObject];
+type ExtractedNodePath = [RandomObject, RandomObject];
 
 interface FileStore {
   [property: string]: any;

@@ -637,6 +637,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@modular-rocks/traverse-files@0.2.4-development":
+  version "0.2.4-development"
+  resolved "https://registry.yarnpkg.com/@modular-rocks/traverse-files/-/traverse-files-0.2.4-development.tgz#51b9f21e7bd894253651a44202928f6165be632e"
+  integrity sha512-IN0NgG7wTfPzpIk8AcOtEYbFwm/Co5cVjp1pvcbHAhLosjudeVQw3GlSlo51RvGju/gy/8hUW8GrM9CnlFlXYA==
+
 "@nicolo-ribaudo/semver-v6@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/semver-v6/-/semver-v6-6.3.3.tgz#ea6d23ade78a325f7a52750aab1526b02b628c29"

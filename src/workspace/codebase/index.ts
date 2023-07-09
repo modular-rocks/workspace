@@ -25,9 +25,9 @@ export default class Codebase {
 
   dependencies: string[];
 
-  opts: Options;
+  opts: CodebaseOpts;
 
-  constructor(opts: Options) {
+  constructor(opts: CodebaseOpts) {
     this.src = opts.src;
     this.extensions = opts.extensions;
     this.ignoredFiles = opts.ignoredFiles;
@@ -37,10 +37,10 @@ export default class Codebase {
     this.rootName = basename(this.src);
     this.srcWithoutRoot = dirname(this.src);
 
-    this.files = this.readFiles(opts.files);
+    this.files = this.storeFiles(opts.files);
 
     this.dependencies = [];
-    this.package = opts.packageContents;
+    this.package = opts.packageContents || {};
     this.storeDependencies();
   }
 
@@ -48,13 +48,13 @@ export default class Codebase {
     return path.replace(this.srcWithoutRoot, '');
   }
 
-  readFiles(files: any[][]) {
+  storeFiles(files: [string, string][]) {
     this.files = {};
-    files.map((record: any[]) => this.storeFile(record));
+    files.map((record: [string, string]) => this.storeFile(record));
     return this.files;
   }
 
-  extractFiles() {
+  extractFiles(): FileContainerType[] {
     return Object.values(this.files);
   }
 
@@ -62,7 +62,7 @@ export default class Codebase {
     return new FileContainer(path, code, this);
   }
 
-  storeFile(record: any[]) {
+  storeFile(record: [string, string]) {
     const [path, code] = record;
     const file = this.newFile(path, code);
     this.files[file.pathname] = file;
@@ -114,10 +114,10 @@ export default class Codebase {
   }
 
   toFiles() {
-    this.files.map(toFile);
+    this.extractFiles().map(toFile);
   }
 
   save() {
-    this.files.map((file: FileContainer) => file.save);
+    this.extractFiles().map((file: FileContainerType) => file.save);
   }
 }

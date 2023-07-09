@@ -3,10 +3,10 @@ import Codebase from '..';
 
 describe('Make Directory', () => {
   test('Everything works', async () => {
-    const files = [1, 2, 3].map((x: number) => [`/home/projects/project/path${x}.ts`, '']);
+    const files: [string, string][] = [1, 2, 3].map((x: number) => [`/home/projects/project/path${x}.ts`, '']);
     const pipeline: Function[] = [];
 
-    const opts: Options = {
+    const opts: CodebaseOpts = {
       pipeline,
       files,
       src: '/home/projects/project/',
