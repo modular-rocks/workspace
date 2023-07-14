@@ -118,6 +118,6 @@ export default class Codebase {
   }
 
   save() {
-    this.extractFiles().map((file: FileContainerType) => file.save);
+    this.extractFiles().map((file: FileContainerType) => file.save());
   }
 }
