@@ -1,4 +1,4 @@
-import Codebase from '../codebase';
+import Codebase from '..';
 
 const str = JSON.stringify;
 

@@ -1,6 +1,6 @@
 {
   "name": "@modular-rocks/workspace",
-  "version": "0.0.9-development",
+  "version": "0.1.0-development",
   "description": "A workspace for working with virtual codebases",
   "main": "./dist/index.js",
   "exports": {
@@ -11,7 +11,6 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/declarations.d.ts",
-  "type": "module",
   "engines": {
     "node": "16.x"
   },
@@ -58,6 +57,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@modular-rocks/traverse-files": "0.2.4-development"
+    "@modular-rocks/traverse-files": "0.2.5-development"
   }
 }
