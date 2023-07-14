@@ -1,5 +1,5 @@
 import { basename, dirname } from 'path';
-import FileContainer from '../file';
+import FileContainer from './file';
 
 import { fromJson, fromFile, toFile, saveToJSON, saveFile } from './save';
 import copy from './copy';

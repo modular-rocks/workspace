@@ -637,10 +637,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@modular-rocks/traverse-files@0.2.4-development":
-  version "0.2.4-development"
-  resolved "https://registry.yarnpkg.com/@modular-rocks/traverse-files/-/traverse-files-0.2.4-development.tgz#51b9f21e7bd894253651a44202928f6165be632e"
-  integrity sha512-IN0NgG7wTfPzpIk8AcOtEYbFwm/Co5cVjp1pvcbHAhLosjudeVQw3GlSlo51RvGju/gy/8hUW8GrM9CnlFlXYA==
+"@modular-rocks/traverse-files@0.2.5-development":
+  version "0.2.5-development"
+  resolved "https://registry.yarnpkg.com/@modular-rocks/traverse-files/-/traverse-files-0.2.5-development.tgz#586103cb9c0fed11ffba90db63a1698f290dfaec"
+  integrity sha512-2/o4mv3bMdhumvvbU1wp1kJ4NBI8DkTwkOR01AMJ6V4RoH8wLPKH8v7pr8mUkcNB4qWmLV+KYzzpzR6hSuk4HA==
 
 "@nicolo-ribaudo/semver-v6@^6.3.3":
   version "6.3.3"
